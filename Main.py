@@ -1,5 +1,4 @@
 __author__ = 'lionel'
-from ExcelData import getExcelData
 
 
 

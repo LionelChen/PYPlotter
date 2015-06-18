@@ -1,5 +1,6 @@
 __author__ = 'lionel'
 import xlrd
+from BarChart import drawBarChart
 
 location = '/Users/lionel/Desktop/ExcelTest.xlsx'
 data = xlrd.open_workbook(location)
@@ -38,6 +39,8 @@ def barChart():
         labelList.append(unmodifiedList[i][0])
     for i in range(len(unmodifiedList)-1):
         valueList.append(unmodifiedList[i][1])
-    print(valueList)
+
+    drawBarChart(labelList,valueList,'test','x-label')
+
 
 barChart()
