@@ -2,25 +2,26 @@ __author__ = 'lionel'
 import xlrd
 from BarChart import drawBarChart
 
-location = '/Users/lionel/Desktop/ExcelTest.xlsx'
-data = xlrd.open_workbook(location)
-table = data.sheets()[0]
-nrows = table.nrows
-ncols = table.ncols
-print('line number =', nrows)
+Location = '/Users/lionel/Desktop/ExcelTest.xlsx'
 
 
-def getExcelData(type):
-    if (type == 'pie'):
-        pieChart()
-    if (type == 'barH'):
-        None
-    if (type == 'bar'):
-        None
+# Set the excel file path using arugent passed from the command line
+def location_setter(ExcelFileLocation):
+    ExcelFileLocation = Location
 
-    dataList = [[0 for col in range(2)] for row in range(nrows)]
-    for i in range(nrows):
-        dataList[i] = table.row_values(i)
+
+Data = xlrd.open_workbook(Location)
+Table = Data.sheets()[0]
+Nrows = Table.nrows
+Ncols = Table.ncols
+print('line number =', Nrows)
+
+
+def getExcelData():
+
+    dataList = [[0 for col in range(2)] for row in range(Nrows)]
+    for i in range(Nrows):
+        dataList[i] = Table.row_values(i)
 
     return dataList
 
