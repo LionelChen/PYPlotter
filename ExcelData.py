@@ -31,7 +31,7 @@ def pieChart():
 
 
 def barChart():
-    unmodifiedList = getExcelData('bar')
+    unmodifiedList = getExcelData()
     labelList = ['I have no idea how to creat an empty list']
     valueList = [0]
     del labelList[0]
